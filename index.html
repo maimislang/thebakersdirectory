@@ -26,6 +26,9 @@
       --color-accent-border: #E8C98A;
       --color-border: #EDE3D3;
       --color-border-light: #F5EFE4;
+      --color-success-bg: #EAF3DE;
+      --color-success-text: #27500A;
+      --color-success-border: #C0DD97;
     }
 
     html { font-size: 16px; }
@@ -61,11 +64,7 @@
       color: var(--color-accent);
       text-decoration: none;
       font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
-
     .nav-link:hover { text-decoration: underline; }
 
     /* ── HERO ── */
@@ -76,7 +75,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 5rem 2rem 3rem;
+      padding: 4rem 2rem 3rem;
       max-width: 680px;
       margin: 0 auto;
       width: 100%;
@@ -98,7 +97,6 @@
       color: var(--color-text-primary);
       line-height: 1.15;
       margin-bottom: 1.25rem;
-      letter-spacing: -0.01em;
     }
 
     .hero-title em {
@@ -111,20 +109,29 @@
       color: var(--color-text-secondary);
       line-height: 1.65;
       max-width: 480px;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    /* ── EMAIL FORM ── */
+    /* ── FORM ── */
     .notify-form {
       display: flex;
-      gap: 8px;
+      flex-direction: column;
+      gap: 10px;
       width: 100%;
       max-width: 420px;
       margin-bottom: 0.75rem;
+      text-align: left;
     }
 
+    .form-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .form-row .notify-input { flex: 1; }
+
     .notify-input {
-      flex: 1;
+      width: 100%;
       padding: 0.7rem 1rem;
       font-size: 14px;
       font-family: 'Inter', sans-serif;
@@ -139,18 +146,101 @@
     .notify-input::placeholder { color: var(--color-text-tertiary); }
     .notify-input:focus { border-color: var(--color-accent); }
 
-    .notify-btn {
-      padding: 0.7rem 1.25rem;
+    /* ── TYPE TOGGLE ── */
+    .toggle-label {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .toggle-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .toggle-btn {
+      flex: 1;
+      padding: 0.6rem 0.75rem;
       font-size: 13px;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
+      border: 1px solid var(--color-accent-border);
+      border-radius: 6px;
+      background: var(--color-bg-card);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .toggle-btn.active {
+      background: var(--color-accent-light);
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    /* ── CONDITIONAL FIELDS ── */
+    .conditional-fields {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      border-left: 2px solid var(--color-accent-border);
+      padding-left: 12px;
+      margin-left: 2px;
+    }
+
+    .conditional-fields.visible { display: flex; }
+
+    /* ── URL INPUT ── */
+    .url-wrapper {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--color-accent-border);
+      border-radius: 6px;
+      background: var(--color-bg-card);
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+
+    .url-wrapper:focus-within { border-color: var(--color-accent); }
+
+    .url-prefix {
+      padding: 0.7rem 0.6rem 0.7rem 1rem;
+      font-size: 13px;
+      color: var(--color-text-tertiary);
+      background: var(--color-border-light);
+      border-right: 1px solid var(--color-accent-border);
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .url-input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      border: none;
+      background: transparent;
+      color: var(--color-text-primary);
+      outline: none;
+    }
+
+    .url-input::placeholder { color: var(--color-text-tertiary); }
+
+    /* ── SUBMIT ── */
+    .notify-btn {
+      width: 100%;
+      padding: 0.75rem 1.25rem;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
       background: var(--color-accent);
       color: #fff;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      white-space: nowrap;
       transition: background 0.15s;
+      margin-top: 2px;
     }
 
     .notify-btn:hover { background: #6B3F09; }
@@ -158,10 +248,27 @@
     .notify-note {
       font-size: 11px;
       color: var(--color-text-tertiary);
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
     }
 
-    /* ── WHAT'S COMING CARD ── */
+    /* ── SUCCESS ── */
+    .success-msg {
+      display: none;
+      font-size: 14px;
+      color: var(--color-success-text);
+      background: var(--color-success-bg);
+      border: 0.5px solid var(--color-success-border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* ── WHAT'S COMING ── */
     .coming-card {
       background: var(--color-bg-card);
       border: 0.5px solid var(--color-border);
@@ -182,12 +289,7 @@
       margin-bottom: 1rem;
     }
 
-    .coming-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
+    .coming-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
 
     .coming-list li {
       font-size: 14px;
@@ -226,10 +328,7 @@
       transition: border-color 0.15s, color 0.15s;
     }
 
-    .suite-pill:hover {
-      border-color: var(--color-accent-border);
-      color: var(--color-accent);
-    }
+    .suite-pill:hover { border-color: var(--color-accent-border); color: var(--color-accent); }
 
     .suite-pill.current {
       background: var(--color-accent-light);
@@ -253,39 +352,15 @@
       font-style: italic;
     }
 
-    .footer-credit {
-      font-size: 11px;
-      color: var(--color-text-tertiary);
-    }
-
-    .footer-credit a {
-      color: var(--color-accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
+    .footer-credit { font-size: 11px; color: var(--color-text-tertiary); }
+    .footer-credit a { color: var(--color-accent); text-decoration: none; font-weight: 500; }
     .footer-credit a:hover { text-decoration: underline; }
 
-    /* ── SUCCESS STATE ── */
-    .success-msg {
-      display: none;
-      font-size: 13px;
-      color: #27500A;
-      background: #EAF3DE;
-      border: 0.5px solid #C0DD97;
-      border-radius: 6px;
-      padding: 0.6rem 1rem;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 0.75rem;
-    }
-
     @media (max-width: 480px) {
-      .notify-form { flex-direction: column; }
       nav { padding: 1rem 1.25rem; }
       .hero { padding: 3rem 1.25rem 2rem; }
       .coming-card { padding: 1.25rem; }
+      .form-row { flex-direction: column; }
     }
   </style>
 </head>
@@ -293,9 +368,7 @@
 
   <nav>
     <span class="nav-suite">The Baker's Suite</span>
-    <a class="nav-link" href="https://thebakersconverter.com" target="_blank" rel="noopener">
-      ← The Baker's Converter
-    </a>
+    <a class="nav-link" href="https://thebakersconverter.com" target="_blank" rel="noopener">← The Baker's Converter</a>
   </nav>
 
   <main class="hero">
@@ -308,26 +381,51 @@
       A free directory of trusted baking suppliers — sourced by bakers, for bakers.
     </p>
 
-    <!-- FORMSPREE: replace action URL with yours from formspree.io/f/XXXXXXXX -->
-    <form class="notify-form"
-          action="https://formspree.io/f/xpqnynqe"
-          method="post"
-          id="notify-form"
-          onsubmit="showSuccess()">
-      <input
-        class="notify-input"
-        type="email"
-        name="email"
-        id="email-input"
-        placeholder="your@email.com"
-        required
-        autocomplete="email"
-      />
-      <button class="notify-btn" type="submit">Notify Me</button>
+    <!-- SIGN UP FORM -->
+    <form class="notify-form" id="notify-form">
+
+      <div class="form-row">
+        <input class="notify-input" type="text" name="first_name" placeholder="First name" required autocomplete="given-name" />
+        <input class="notify-input" type="email" name="email" placeholder="Email address" required autocomplete="email" />
+      </div>
+
+
+      <div>
+        <p class="toggle-label">Signing up as:</p>
+        <div class="toggle-row">
+          <button type="button" class="toggle-btn active" id="btn-individual" onclick="setType('individual')">Individual Baker</button>
+          <button type="button" class="toggle-btn" id="btn-company" onclick="setType('company')">Company / Business</button>
+        </div>
+      </div>
+      <input type="hidden" name="account_type" id="account_type" value="individual" />
+
+      <!-- Company conditional fields -->
+      <div class="conditional-fields" id="company-fields">
+        <div>
+          <p class="toggle-label">Would you like to feature your business in the directory?</p>
+          <div class="toggle-row">
+            <button type="button" class="toggle-btn" id="btn-feature-yes" onclick="setFeature('yes')">Yes, feature us</button>
+            <button type="button" class="toggle-btn" id="btn-feature-no" onclick="setFeature('no')">Not yet</button>
+          </div>
+        </div>
+        <input type="hidden" name="wants_featured" id="wants_featured" value="" />
+
+        <!-- URL field — only if they want to be featured -->
+        <div id="url-field" style="display:none;">
+          <div class="url-wrapper">
+            <span class="url-prefix">https://</span>
+            <input class="url-input" type="text" name="business_url" id="business_url" placeholder="yourbusiness.com" />
+          </div>
+          <input class="notify-input" type="tel" name="business_number" placeholder="Business number (e.g. +63 917 123 4567)" autocomplete="tel" style="margin-top:8px;" />
+        </div>
+      </div>
+
+      <button class="notify-btn" type="submit">Sign Up</button>
     </form>
 
     <div class="success-msg" id="success-msg">
-      ✓ You're on the list. We'll let you know when The Baker's Directory is live.
+      ✓ You're on the list.<br />
+      We'll reach out personally when The Baker's Directory is ready for you.
     </div>
 
     <p class="notify-note">No spam. One email when we launch.</p>
@@ -359,14 +457,55 @@
   </footer>
 
   <script>
-    function showSuccess() {
-      const form = document.getElementById('mc-embedded-subscribe-form');
-      const success = document.getElementById('success-msg');
-      setTimeout(() => {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }, 300);
+    function setType(type) {
+      document.getElementById('account_type').value = type;
+      document.getElementById('btn-individual').classList.toggle('active', type === 'individual');
+      document.getElementById('btn-company').classList.toggle('active', type === 'company');
+      const companyFields = document.getElementById('company-fields');
+      companyFields.classList.toggle('visible', type === 'company');
+      if (type === 'individual') {
+        document.getElementById('wants_featured').value = '';
+        document.getElementById('url-field').style.display = 'none';
+        document.getElementById('btn-feature-yes').classList.remove('active');
+        document.getElementById('btn-feature-no').classList.remove('active');
+      }
     }
+
+    function setFeature(val) {
+      document.getElementById('wants_featured').value = val;
+      document.getElementById('btn-feature-yes').classList.toggle('active', val === 'yes');
+      document.getElementById('btn-feature-no').classList.toggle('active', val === 'no');
+      document.getElementById('url-field').style.display = val === 'yes' ? 'block' : 'none';
+    }
+
+    document.getElementById('notify-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      // Prepend https:// to business URL if provided
+      const urlInput = document.getElementById('business_url');
+      if (urlInput && urlInput.value) {
+        data.set('business_url', 'https://' + urlInput.value.replace(/^https?:\/\//, ''));
+      }
+
+      try {
+        const res = await fetch('https://formspree.io/f/xpqnynqe', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('success-msg').style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      } catch (err) {
+        alert('Something went wrong. Please try again.');
+      }
+    });
   </script>
 
 </body>
