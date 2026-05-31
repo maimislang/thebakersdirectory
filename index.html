@@ -1,14 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-PH">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Baker's Directory — Coming Soon</title>
-  <meta name="description" content="A free directory of trusted baking suppliers. Find flour, butter, specialty ingredients, and more — sourced by bakers, for bakers." />
-  <meta property="og:title" content="The Baker's Directory — Coming Soon" />
-  <meta property="og:description" content="Find the ingredients you trust. The Baker's Directory is coming soon." />
+
+  <!-- ─────────────────────────────────────────────────────────────
+       GOOGLE ANALYTICS (GA4)
+       TODO: replace G-XXXXXXXXXX below with your real Measurement ID.
+       Create a property at analytics.google.com → Admin → Data Streams.
+       Until you swap the ID, this snippet is inert (no tracking).
+       ───────────────────────────────────────────────────────────── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <title>The Baker's Directory — Find Bakeries &amp; Baking Suppliers in the Philippines</title>
+  <meta name="description" content="The Baker's Directory helps you find trusted artisan bakeries, sourdough, and home bakers across the Philippines — and helps bakers source flour, ingredients, equipment, and packaging suppliers. Free to use. Launching soon." />
+  <meta name="keywords" content="bakery directory Philippines, artisan bakery Manila, sourdough bakery near me, home bakery delivery Metro Manila, Filipino artisan bread, baking suppliers Philippines, flour supplier Philippines, bakery packaging supplier" />
+  <meta name="author" content="Rise Artisanal" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://thebakersdirectory.com/" />
+
+  <!-- Geo signals (helps local + 'near me' relevance) -->
+  <meta name="geo.region" content="PH" />
+  <meta name="geo.placename" content="Metro Manila, Philippines" />
+  <meta name="ICBM" content="14.5995, 120.9842" />
+  <meta name="theme-color" content="#854F0B" />
+
+  <!-- Favicon — rolling pin (self-contained inline SVG; favicon.svg also shipped) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><g transform='rotate(-40 16 16)'><rect x='8.5' y='13' width='15' height='6' rx='3' fill='%23854F0B'/><rect x='3' y='14.5' width='4.5' height='3' rx='1.5' fill='%23854F0B'/><rect x='24.5' y='14.5' width='4.5' height='3' rx='1.5' fill='%23854F0B'/></g></svg>" />
+  <link rel="alternate icon" href="favicon.svg" />
+  <link rel="mask-icon" href="favicon.svg" color="#854F0B" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Baker's Directory — Find Bakeries &amp; Baking Suppliers in the Philippines" />
+  <meta property="og:description" content="Find trusted bakeries, sourdough, and home bakers across the Philippines — plus the suppliers bakers rely on. Free to use. Launching soon." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thebakersdirectory.com" />
+  <meta property="og:url" content="https://thebakersdirectory.com/" />
+  <meta property="og:site_name" content="The Baker's Directory" />
+  <meta property="og:locale" content="en_PH" />
+  <!-- TODO: drop a 1200x630 image at /og-image.png for rich social/link previews -->
+  <meta property="og:image" content="https://thebakersdirectory.com/og-image.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Baker's Directory — Find Bakeries &amp; Baking Suppliers in the Philippines" />
+  <meta name="twitter:description" content="Find trusted bakeries, sourdough, and home bakers across the Philippines — plus the suppliers bakers rely on. Free to use. Launching soon." />
+  <meta name="twitter:image" content="https://thebakersdirectory.com/og-image.png" />
+
+  <!-- ── Structured data: Organization + WebSite (SEO + AI/GEO entity grounding) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://thebakersdirectory.com/#organization",
+        "name": "The Baker's Directory",
+        "url": "https://thebakersdirectory.com/",
+        "logo": "https://thebakersdirectory.com/favicon.svg",
+        "description": "A free directory for finding trusted bakeries and baking suppliers in the Philippines.",
+        "areaServed": { "@type": "Country", "name": "Philippines" },
+        "parentOrganization": { "@type": "Organization", "name": "Rise Artisanal", "url": "https://riseartisanal.com" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://thebakersdirectory.com/#website",
+        "name": "The Baker's Directory",
+        "url": "https://thebakersdirectory.com/",
+        "inLanguage": "en-PH",
+        "publisher": { "@id": "https://thebakersdirectory.com/#organization" },
+        "description": "Find trusted artisan bakeries, sourdough, and home bakers across the Philippines, and the flour, ingredient, equipment, and packaging suppliers bakers rely on."
+      }
+    ]
+  }
+  </script>
+
+  <!-- ── Structured data: FAQ (mirrors visible Q&A — strong for AI Overviews) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is The Baker's Directory?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The Baker's Directory is a free directory for finding trusted bakeries and baking suppliers in the Philippines. Whether you're after the best sourdough near you, a home baker who delivers in Metro Manila, or a flour and packaging supplier for your own bakery, we're building one place to find them." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is The Baker's Directory free to use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Searching and browsing the directory is free, and always will be. Bakeries and suppliers can also claim a free listing." }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas does The Baker's Directory cover?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We're starting in the Philippines — Metro Manila first, then nationwide. Support for Filipino bakeries that ship internationally, and for the global Filipino community abroad, is on the roadmap." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can bakeries and suppliers list their business?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Home-based and storefront bakeries can be listed, alongside flour, ingredient, equipment, and packaging suppliers. Sign up to be among the first featured at launch." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I send Filipino baked goods to family in the Philippines from abroad?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It's coming. We're building a way for overseas Filipinos to send artisan bread and baked goods to loved ones back home. Join the list to hear first." }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
@@ -308,6 +414,42 @@
       margin-top: 1px;
     }
 
+    /* ── FAQ ── */
+    .faq {
+      max-width: 560px;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+
+    .faq-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 0.5px solid var(--color-border);
+      padding: 1rem 0;
+    }
+    .faq-item:first-of-type { border-top: 0.5px solid var(--color-border); }
+
+    .faq-item h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
     /* ── SUITE BAR ── */
     .suite-bar {
       display: flex;
@@ -377,8 +519,9 @@
     <h1 class="hero-title">The Baker's <em>Directory</em></h1>
 
     <p class="hero-subtitle">
-      Good bread starts with good flour. Good flour starts with knowing where to find it.
-      A free directory of trusted baking suppliers — sourced by bakers, for bakers.
+      The easiest way to find trusted bakeries and baking suppliers in the Philippines.
+      Discover artisan sourdough, home bakers who deliver in Metro Manila, and the flour,
+      ingredients, and packaging suppliers bakers rely on — sourced by bakers, for bakers.
     </p>
 
     <!-- SIGN UP FORM -->
@@ -433,13 +576,45 @@
     <div class="coming-card">
       <p class="coming-card-title">What's inside</p>
       <ul class="coming-list">
-        <li>Flour, butter, sugar, and specialty ingredient suppliers</li>
-        <li>Search and filter by category, region, and delivery availability</li>
-        <li>Supplier contact details — phone, Viber, Shopee, and more</li>
-        <li>Honest notes from bakers who've actually ordered from them</li>
+        <li>Find bakeries by location, product, region, and delivery availability</li>
+        <li>Artisan, sourdough, and home-based bakers — including ones you won't find on a map</li>
+        <li>Supplier listings: flour, butter, sugar, specialty ingredients, equipment, and packaging</li>
+        <li>Contact details bakers actually use — phone, Viber, Shopee, and more</li>
+        <li>Honest notes from bakers who've ordered themselves</li>
+        <li>For the diaspora: send artisan bread and baked goods to family in the Philippines <em>(soon)</em></li>
         <li>Free to use — always</li>
       </ul>
     </div>
+
+    <!-- ── FAQ (visible Q&A mirrors FAQPage schema for AI Overviews) ── -->
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 class="faq-title" id="faq-title">Questions, answered</h2>
+
+      <div class="faq-item">
+        <h3>What is The Baker's Directory?</h3>
+        <p>The Baker's Directory is a free directory for finding trusted bakeries and baking suppliers in the Philippines. Whether you're after the best sourdough near you, a home baker who delivers in Metro Manila, or a flour and packaging supplier for your own bakery, we're building one place to find them.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is The Baker's Directory free to use?</h3>
+        <p>Yes. Searching and browsing the directory is free, and always will be. Bakeries and suppliers can also claim a free listing.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What areas does it cover?</h3>
+        <p>We're starting in the Philippines — Metro Manila first, then nationwide. Support for Filipino bakeries that ship internationally, and for the global Filipino community abroad, is on the roadmap.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can bakeries and suppliers list their business?</h3>
+        <p>Absolutely. Home-based and storefront bakeries can be listed, alongside flour, ingredient, equipment, and packaging suppliers. Sign up above to be among the first featured at launch.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I send Filipino baked goods to family in the Philippines from abroad?</h3>
+        <p>It's coming. We're building a way for overseas Filipinos to send artisan bread and baked goods to loved ones back home. Join the list to hear first.</p>
+      </div>
+    </section>
 
     <div class="suite-bar">
       <a class="suite-pill" href="https://thebakersconverter.com" target="_blank" rel="noopener">The Baker's Converter ↗</a>
@@ -497,6 +672,13 @@
         });
 
         if (res.ok) {
+          // GA4: record a sign-up conversion (no-op until you set your Measurement ID)
+          if (typeof gtag === 'function') {
+            gtag('event', 'sign_up', {
+              method: 'waitlist',
+              account_type: data.get('account_type') || 'individual'
+            });
+          }
           form.style.display = 'none';
           document.getElementById('success-msg').style.display = 'block';
         } else {
