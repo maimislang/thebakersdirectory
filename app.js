@@ -1,6 +1,7 @@
 const suppliers = Array.isArray(window.SUPPLIERS) ? window.SUPPLIERS : [];
 const grid = document.getElementById('supplier-grid');
 const searchInput = document.getElementById('search');
+const searchForm = document.getElementById('main-search-form');
 const regionFilter = document.getElementById('region-filter');
 const categoryFilter = document.getElementById('category-filter');
 const levelFilter = document.getElementById('level-filter');
@@ -85,16 +86,21 @@ function applyFilters() {
   });
 
   grid.innerHTML = filtered.map(cardTemplate).join('');
-  resultsCount.textContent =
-    filtered.length === suppliers.length
-      ? `Showing all ${suppliers.length} suppliers`
-      : `${filtered.length} supplier${filtered.length === 1 ? '' : 's'} found`;
-
+  resultsCount.textContent = filtered.length === suppliers.length
+    ? `Showing all ${suppliers.length} suppliers`
+    : `${filtered.length} supplier${filtered.length === 1 ? '' : 's'} found`;
   emptyState.style.display = filtered.length ? 'none' : 'block';
 }
 
-[searchInput, regionFilter, categoryFilter, levelFilter].forEach(control => {
-  control.addEventListener(control === searchInput ? 'input' : 'change', applyFilters);
+searchInput.addEventListener('input', applyFilters);
+[regionFilter, categoryFilter, levelFilter].forEach(control => {
+  control.addEventListener('change', applyFilters);
+});
+
+searchForm.addEventListener('submit', event => {
+  event.preventDefault();
+  applyFilters();
+  document.getElementById('directory').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 clearButton.addEventListener('click', () => {
@@ -103,7 +109,65 @@ clearButton.addEventListener('click', () => {
   categoryFilter.value = '';
   levelFilter.value = '';
   applyFilters();
-  searchInput.focus();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  searchInput.focus({ preventScroll: true });
+});
+
+const accountInput = document.getElementById('account_type');
+const companyFields = document.getElementById('company-fields');
+const featureInput = document.getElementById('wants_featured');
+const businessFields = document.getElementById('business-fields');
+
+document.querySelectorAll('[data-account-type]').forEach(button => {
+  button.addEventListener('click', () => {
+    const type = button.dataset.accountType;
+    accountInput.value = type;
+    document.querySelectorAll('[data-account-type]').forEach(item => {
+      item.classList.toggle('active', item === button);
+    });
+    companyFields.classList.toggle('visible', type === 'company');
+    if (type !== 'company') {
+      featureInput.value = '';
+      businessFields.classList.remove('visible');
+      document.querySelectorAll('[data-feature]').forEach(item => item.classList.remove('active'));
+    }
+  });
+});
+
+document.querySelectorAll('[data-feature]').forEach(button => {
+  button.addEventListener('click', () => {
+    const value = button.dataset.feature;
+    featureInput.value = value;
+    document.querySelectorAll('[data-feature]').forEach(item => {
+      item.classList.toggle('active', item === button);
+    });
+    businessFields.classList.toggle('visible', value === 'yes');
+  });
+});
+
+const notifyForm = document.getElementById('notify-form');
+notifyForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const submitButton = notifyForm.querySelector('[type="submit"]');
+  const originalLabel = submitButton.textContent;
+  submitButton.disabled = true;
+  submitButton.textContent = 'Signing up…';
+
+  try {
+    const response = await fetch('https://formspree.io/f/xpqnynqe', {
+      method: 'POST',
+      body: new FormData(notifyForm),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!response.ok) throw new Error('Form submission failed');
+    notifyForm.style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  } catch (error) {
+    alert('Something went wrong. Please try again.');
+    submitButton.disabled = false;
+    submitButton.textContent = originalLabel;
+  }
 });
 
 const itemListSchema = {
