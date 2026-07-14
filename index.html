@@ -3,56 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ─────────────────────────────────────────────────────────────
-       GOOGLE ANALYTICS (GA4)
-       TODO: replace G-XXXXXXXXXX below with your real Measurement ID.
-       Create a property at analytics.google.com → Admin → Data Streams.
-       Until you swap the ID, this snippet is inert (no tracking).
-       ───────────────────────────────────────────────────────────── -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  <title>The Baker's Directory — Find Bakeries &amp; Baking Suppliers in the Philippines</title>
-  <meta name="description" content="The Baker's Directory helps you find trusted artisan bakeries, sourdough, and home bakers across the Philippines — and helps bakers source flour, ingredients, equipment, and packaging suppliers. Free to use. Launching soon." />
-  <meta name="keywords" content="bakery directory Philippines, artisan bakery Manila, sourdough bakery near me, home bakery delivery Metro Manila, Filipino artisan bread, baking suppliers Philippines, flour supplier Philippines, bakery packaging supplier" />
+  <title>The Baker's Directory — Trusted Baking Suppliers in the Philippines & Beyond</title>
+  <meta name="description" content="A free, curated directory of trusted baking suppliers for flour, sourdough tools, chocolate, ingredients, ovens, mixers, packaging and professional bakery equipment." />
+  <meta name="keywords" content="baking suppliers Philippines, sourdough supplies Philippines, flour supplier Philippines, bakery equipment Philippines, banneton Philippines, baking tools, bakery packaging, commercial bakery equipment" />
   <meta name="author" content="Rise Artisanal" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://thebakersdirectory.com/" />
-
-  <!-- Geo signals (helps local + 'near me' relevance) -->
-  <meta name="geo.region" content="PH" />
-  <meta name="geo.placename" content="Metro Manila, Philippines" />
-  <meta name="ICBM" content="14.5995, 120.9842" />
-  <meta name="theme-color" content="#854F0B" />
-
-  <!-- Favicon — rolling pin (self-contained inline SVG; favicon.svg also shipped) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><g transform='rotate(-40 16 16)'><rect x='8.5' y='13' width='15' height='6' rx='3' fill='%23854F0B'/><rect x='3' y='14.5' width='4.5' height='3' rx='1.5' fill='%23854F0B'/><rect x='24.5' y='14.5' width='4.5' height='3' rx='1.5' fill='%23854F0B'/></g></svg>" />
-  <link rel="alternate icon" href="favicon.svg" />
-  <link rel="mask-icon" href="favicon.svg" color="#854F0B" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="The Baker's Directory — Find Bakeries &amp; Baking Suppliers in the Philippines" />
-  <meta property="og:description" content="Find trusted bakeries, sourdough, and home bakers across the Philippines — plus the suppliers bakers rely on. Free to use. Launching soon." />
+  <meta name="theme-color" content="#7a4810" />
+  <meta property="og:title" content="The Baker's Directory — Find What Your Bake Is Made Of" />
+  <meta property="og:description" content="Trusted suppliers for beginners, home bakers, microbakeries and professional bakeries. Free to browse. Curated by a working baker." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thebakersdirectory.com/" />
   <meta property="og:site_name" content="The Baker's Directory" />
   <meta property="og:locale" content="en_PH" />
-  <!-- TODO: drop a 1200x630 image at /og-image.png for rich social/link previews -->
-  <meta property="og:image" content="https://thebakersdirectory.com/og-image.png" />
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Baker's Directory — Find Bakeries &amp; Baking Suppliers in the Philippines" />
-  <meta name="twitter:description" content="Find trusted bakeries, sourdough, and home bakers across the Philippines — plus the suppliers bakers rely on. Free to use. Launching soon." />
-  <meta name="twitter:image" content="https://thebakersdirectory.com/og-image.png" />
-
-  <!-- ── Structured data: Organization + WebSite (SEO + AI/GEO entity grounding) ── -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,10 +29,9 @@
         "@id": "https://thebakersdirectory.com/#organization",
         "name": "The Baker's Directory",
         "url": "https://thebakersdirectory.com/",
-        "logo": "https://thebakersdirectory.com/favicon.svg",
-        "description": "A free directory for finding trusted bakeries and baking suppliers in the Philippines.",
-        "areaServed": { "@type": "Country", "name": "Philippines" },
-        "parentOrganization": { "@type": "Organization", "name": "Rise Artisanal", "url": "https://riseartisanal.com" }
+        "description": "An independent, curated directory of baking suppliers in the Philippines and abroad.",
+        "areaServed": ["Philippines", "Worldwide"],
+        "parentOrganization": {"@type": "Organization", "name": "Rise Artisanal", "url": "https://riseartisanal.com/"}
       },
       {
         "@type": "WebSite",
@@ -73,622 +39,106 @@
         "name": "The Baker's Directory",
         "url": "https://thebakersdirectory.com/",
         "inLanguage": "en-PH",
-        "publisher": { "@id": "https://thebakersdirectory.com/#organization" },
-        "description": "Find trusted artisan bakeries, sourdough, and home bakers across the Philippines, and the flour, ingredient, equipment, and packaging suppliers bakers rely on."
+        "publisher": {"@id": "https://thebakersdirectory.com/#organization"},
+        "description": "Find trusted suppliers for flour, ingredients, tools, equipment and packaging."
       }
     ]
   }
   </script>
-
-  <!-- ── Structured data: FAQ (mirrors visible Q&A — strong for AI Overviews) ── -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is The Baker's Directory?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The Baker's Directory is a free directory for finding trusted bakeries and baking suppliers in the Philippines. Whether you're after the best sourdough near you, a home baker who delivers in Metro Manila, or a flour and packaging supplier for your own bakery, we're building one place to find them." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is The Baker's Directory free to use?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Searching and browsing the directory is free, and always will be. Bakeries and suppliers can also claim a free listing." }
-      },
-      {
-        "@type": "Question",
-        "name": "What areas does The Baker's Directory cover?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We're starting in the Philippines — Metro Manila first, then nationwide. Support for Filipino bakeries that ship internationally, and for the global Filipino community abroad, is on the roadmap." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can bakeries and suppliers list their business?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Home-based and storefront bakeries can be listed, alongside flour, ingredient, equipment, and packaging suppliers. Sign up to be among the first featured at launch." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I send Filipino baked goods to family in the Philippines from abroad?",
-        "acceptedAnswer": { "@type": "Answer", "text": "It's coming. We're building a way for overseas Filipinos to send artisan bread and baked goods to loved ones back home. Join the list to hear first." }
-      }
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --color-bg: #FDFAF6;
-      --color-bg-card: #FFFFFF;
-      --color-text-primary: #1A1208;
-      --color-text-secondary: #5C4A2A;
-      --color-text-tertiary: #9C8060;
-      --color-accent: #854F0B;
-      --color-accent-light: #FAEEDA;
-      --color-accent-border: #E8C98A;
-      --color-border: #EDE3D3;
-      --color-border-light: #F5EFE4;
-      --color-success-bg: #EAF3DE;
-      --color-success-text: #27500A;
-      --color-success-border: #C0DD97;
-    }
-
-    html { font-size: 16px; }
-
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text-primary);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* ── NAV ── */
-    nav {
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 0.5px solid var(--color-border);
-    }
-
-    .nav-suite {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-tertiary);
-      font-weight: 500;
-    }
-
-    .nav-link {
-      font-size: 12px;
-      color: var(--color-accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .nav-link:hover { text-decoration: underline; }
-
-    /* ── HERO ── */
-    .hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 4rem 2rem 3rem;
-      max-width: 680px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--color-text-tertiary);
-      font-weight: 500;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-title {
-      font-family: 'Lora', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 400;
-      color: var(--color-text-primary);
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--color-accent);
-    }
-
-    .hero-subtitle {
-      font-size: 1rem;
-      color: var(--color-text-secondary);
-      line-height: 1.65;
-      max-width: 480px;
-      margin-bottom: 2rem;
-    }
-
-    /* ── FORM ── */
-    .notify-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-      max-width: 420px;
-      margin-bottom: 0.75rem;
-      text-align: left;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 8px;
-    }
-
-    .form-row .notify-input { flex: 1; }
-
-    .notify-input {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      border: 1px solid var(--color-accent-border);
-      border-radius: 6px;
-      background: var(--color-bg-card);
-      color: var(--color-text-primary);
-      outline: none;
-      transition: border-color 0.15s;
-    }
-
-    .notify-input::placeholder { color: var(--color-text-tertiary); }
-    .notify-input:focus { border-color: var(--color-accent); }
-
-    /* ── TYPE TOGGLE ── */
-    .toggle-label {
-      font-size: 12px;
-      color: var(--color-text-secondary);
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .toggle-row {
-      display: flex;
-      gap: 8px;
-    }
-
-    .toggle-btn {
-      flex: 1;
-      padding: 0.6rem 0.75rem;
-      font-size: 13px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      border: 1px solid var(--color-accent-border);
-      border-radius: 6px;
-      background: var(--color-bg-card);
-      color: var(--color-text-secondary);
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .toggle-btn.active {
-      background: var(--color-accent-light);
-      border-color: var(--color-accent);
-      color: var(--color-accent);
-    }
-
-    /* ── CONDITIONAL FIELDS ── */
-    .conditional-fields {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      border-left: 2px solid var(--color-accent-border);
-      padding-left: 12px;
-      margin-left: 2px;
-    }
-
-    .conditional-fields.visible { display: flex; }
-
-    /* ── URL INPUT ── */
-    .url-wrapper {
-      display: flex;
-      align-items: center;
-      border: 1px solid var(--color-accent-border);
-      border-radius: 6px;
-      background: var(--color-bg-card);
-      overflow: hidden;
-      transition: border-color 0.15s;
-    }
-
-    .url-wrapper:focus-within { border-color: var(--color-accent); }
-
-    .url-prefix {
-      padding: 0.7rem 0.6rem 0.7rem 1rem;
-      font-size: 13px;
-      color: var(--color-text-tertiary);
-      background: var(--color-border-light);
-      border-right: 1px solid var(--color-accent-border);
-      white-space: nowrap;
-      user-select: none;
-    }
-
-    .url-input {
-      flex: 1;
-      padding: 0.7rem 1rem;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      border: none;
-      background: transparent;
-      color: var(--color-text-primary);
-      outline: none;
-    }
-
-    .url-input::placeholder { color: var(--color-text-tertiary); }
-
-    /* ── SUBMIT ── */
-    .notify-btn {
-      width: 100%;
-      padding: 0.75rem 1.25rem;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      background: var(--color-accent);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.15s;
-      margin-top: 2px;
-    }
-
-    .notify-btn:hover { background: #6B3F09; }
-
-    .notify-note {
-      font-size: 11px;
-      color: var(--color-text-tertiary);
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    /* ── SUCCESS ── */
-    .success-msg {
-      display: none;
-      font-size: 14px;
-      color: var(--color-success-text);
-      background: var(--color-success-bg);
-      border: 0.5px solid var(--color-success-border);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 0.75rem;
-      line-height: 1.5;
-    }
-
-    /* ── WHAT'S COMING ── */
-    .coming-card {
-      background: var(--color-bg-card);
-      border: 0.5px solid var(--color-border);
-      border-radius: 12px;
-      padding: 1.75rem 2rem;
-      max-width: 480px;
-      width: 100%;
-      text-align: left;
-      margin-bottom: 3rem;
-    }
-
-    .coming-card-title {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-tertiary);
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-
-    .coming-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-
-    .coming-list li {
-      font-size: 14px;
-      color: var(--color-text-secondary);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      line-height: 1.45;
-    }
-
-    .coming-list li::before {
-      content: "∿";
-      color: var(--color-accent);
-      flex-shrink: 0;
-      font-size: 13px;
-      margin-top: 1px;
-    }
-
-    /* ── FAQ ── */
-    .faq {
-      max-width: 560px;
-      width: 100%;
-      text-align: left;
-      margin-bottom: 3rem;
-    }
-
-    .faq-title {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--color-text-primary);
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .faq-item {
-      border-bottom: 0.5px solid var(--color-border);
-      padding: 1rem 0;
-    }
-    .faq-item:first-of-type { border-top: 0.5px solid var(--color-border); }
-
-    .faq-item h3 {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--color-text-primary);
-      margin-bottom: 0.4rem;
-    }
-
-    .faq-item p {
-      font-size: 14px;
-      color: var(--color-text-secondary);
-      line-height: 1.6;
-    }
-
-    /* ── SUITE BAR ── */
-    .suite-bar {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 4rem;
-    }
-
-    .suite-pill {
-      font-size: 12px;
-      color: var(--color-text-tertiary);
-      text-decoration: none;
-      padding: 5px 12px;
-      border: 0.5px solid var(--color-border);
-      border-radius: 20px;
-      background: var(--color-bg-card);
-      transition: border-color 0.15s, color 0.15s;
-    }
-
-    .suite-pill:hover { border-color: var(--color-accent-border); color: var(--color-accent); }
-
-    .suite-pill.current {
-      background: var(--color-accent-light);
-      border-color: var(--color-accent-border);
-      color: var(--color-accent);
-      font-weight: 500;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 1.5rem 2rem 2rem;
-      border-top: 0.5px solid var(--color-border);
-    }
-
-    .footer-tagline {
-      font-size: 12px;
-      color: var(--color-text-tertiary);
-      margin-bottom: 0.4rem;
-      font-family: 'Lora', serif;
-      font-style: italic;
-    }
-
-    .footer-credit { font-size: 11px; color: var(--color-text-tertiary); }
-    .footer-credit a { color: var(--color-accent); text-decoration: none; font-weight: 500; }
-    .footer-credit a:hover { text-decoration: underline; }
-
-    @media (max-width: 480px) {
-      nav { padding: 1rem 1.25rem; }
-      .hero { padding: 3rem 1.25rem 2rem; }
-      .coming-card { padding: 1.25rem; }
-      .form-row { flex-direction: column; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <nav>
-    <span class="nav-suite">The Baker's Suite</span>
-    <a class="nav-link" href="https://thebakersconverter.com" target="_blank" rel="noopener">← The Baker's Converter</a>
+  <nav class="site-nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="The Baker's Directory home"><span class="brand-mark">∿</span><span>The Baker's Directory</span></a>
+      <div class="nav-links">
+        <a href="#directory">Suppliers</a>
+        <a href="#starter-kit">Starter kit</a>
+        <a href="#about">How we curate</a>
+        <a href="#join">Sign up</a>
+        <a href="https://thebakersconverter.com/" target="_blank" rel="noopener">Baker's Converter ↗</a>
+      </div>
+    </div>
   </nav>
 
-  <main class="hero">
-    <p class="eyebrow">Coming Soon</p>
-
-    <h1 class="hero-title">The Baker's <em>Directory</em></h1>
-
-    <p class="hero-subtitle">
-      The easiest way to find trusted bakeries and baking suppliers in the Philippines.
-      Discover artisan sourdough, home bakers who deliver in Metro Manila, and the flour,
-      ingredients, and packaging suppliers bakers rely on — sourced by bakers, for bakers.
-    </p>
-
-    <!-- SIGN UP FORM -->
-    <form class="notify-form" id="notify-form">
-
-      <div class="form-row">
-        <input class="notify-input" type="text" name="first_name" placeholder="First name" required autocomplete="given-name" />
-        <input class="notify-input" type="email" name="email" placeholder="Email address" required autocomplete="email" />
-      </div>
-
-
-      <div>
-        <p class="toggle-label">Signing up as:</p>
-        <div class="toggle-row">
-          <button type="button" class="toggle-btn active" id="btn-individual" onclick="setType('individual')">Individual Baker</button>
-          <button type="button" class="toggle-btn" id="btn-company" onclick="setType('company')">Company / Business</button>
-        </div>
-      </div>
-      <input type="hidden" name="account_type" id="account_type" value="individual" />
-
-      <!-- Company conditional fields -->
-      <div class="conditional-fields" id="company-fields">
-        <div>
-          <p class="toggle-label">Would you like to feature your business in the directory?</p>
-          <div class="toggle-row">
-            <button type="button" class="toggle-btn" id="btn-feature-yes" onclick="setFeature('yes')">Yes, feature us</button>
-            <button type="button" class="toggle-btn" id="btn-feature-no" onclick="setFeature('no')">Not yet</button>
-          </div>
-        </div>
-        <input type="hidden" name="wants_featured" id="wants_featured" value="" />
-
-        <!-- URL field — only if they want to be featured -->
-        <div id="url-field" style="display:none;">
-          <div class="url-wrapper">
-            <span class="url-prefix">https://</span>
-            <input class="url-input" type="text" name="business_url" id="business_url" placeholder="yourbusiness.com" />
-          </div>
-          <input class="notify-input" type="tel" name="business_number" placeholder="Business number (e.g. +63 917 123 4567)" autocomplete="tel" style="margin-top:8px;" />
-        </div>
-      </div>
-
-      <button class="notify-btn" type="submit">Sign Up</button>
-    </form>
-
-    <div class="success-msg" id="success-msg">
-      ✓ You're on the list.<br />
-      We'll reach out personally when The Baker's Directory is ready for you.
-    </div>
-
-    <p class="notify-note">No spam. One email when we launch.</p>
-
-    <div class="coming-card">
-      <p class="coming-card-title">What's inside</p>
-      <ul class="coming-list">
-        <li>Find bakeries by location, product, region, and delivery availability</li>
-        <li>Artisan, sourdough, and home-based bakers — including ones you won't find on a map</li>
-        <li>Supplier listings: flour, butter, sugar, specialty ingredients, equipment, and packaging</li>
-        <li>Contact details bakers actually use — phone, Viber, Shopee, and more</li>
-        <li>Honest notes from bakers who've ordered themselves</li>
-        <li>For the diaspora: send artisan bread and baked goods to family in the Philippines <em>(soon)</em></li>
-        <li>Free to use — always</li>
-      </ul>
-    </div>
-
-    <!-- ── FAQ (visible Q&A mirrors FAQPage schema for AI Overviews) ── -->
-    <section class="faq" aria-labelledby="faq-title">
-      <h2 class="faq-title" id="faq-title">Questions, answered</h2>
-
-      <div class="faq-item">
-        <h3>What is The Baker's Directory?</h3>
-        <p>The Baker's Directory is a free directory for finding trusted bakeries and baking suppliers in the Philippines. Whether you're after the best sourdough near you, a home baker who delivers in Metro Manila, or a flour and packaging supplier for your own bakery, we're building one place to find them.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Is The Baker's Directory free to use?</h3>
-        <p>Yes. Searching and browsing the directory is free, and always will be. Bakeries and suppliers can also claim a free listing.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What areas does it cover?</h3>
-        <p>We're starting in the Philippines — Metro Manila first, then nationwide. Support for Filipino bakeries that ship internationally, and for the global Filipino community abroad, is on the roadmap.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Can bakeries and suppliers list their business?</h3>
-        <p>Absolutely. Home-based and storefront bakeries can be listed, alongside flour, ingredient, equipment, and packaging suppliers. Sign up above to be among the first featured at launch.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Can I send Filipino baked goods to family in the Philippines from abroad?</h3>
-        <p>It's coming. We're building a way for overseas Filipinos to send artisan bread and baked goods to loved ones back home. Join the list to hear first.</p>
+  <main id="top">
+    <section class="search-hero">
+      <div class="search-hero-inner">
+        <p class="eyebrow">Free · Curated · No account required</p>
+        <h1>The Baker's <em>Directory</em></h1>
+        <p class="search-intro">Find trusted flour, ingredients, tools, ovens, mixers, packaging and specialist bakery suppliers.</p>
+        <form class="main-search" id="main-search-form" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
+          <input id="search" type="search" placeholder="Search flour, banneton, oven, packaging…" aria-label="Search suppliers" autocomplete="off" />
+          <button type="submit" aria-label="Search directory">Search</button>
+        </form>
+        <p class="search-hint">Try “bread flour”, “Quezon City”, “commercial oven” or “banneton”.</p>
       </div>
     </section>
 
-    <div class="suite-bar">
-      <a class="suite-pill" href="https://thebakersconverter.com" target="_blank" rel="noopener">The Baker's Converter ↗</a>
-      <span class="suite-pill current">The Baker's Directory</span>
-      <span class="suite-pill" style="cursor:default;opacity:0.5;">The Baker's Budgeter — calculating soon</span>
+    <div class="shell">
+      <section class="stats" aria-label="Directory statistics">
+        <div class="stat"><strong id="supplier-stat">34</strong><span>curated suppliers</span></div>
+        <div class="stat"><strong id="ph-stat">18</strong><span>Philippine sources</span></div>
+        <div class="stat"><strong id="category-stat">20+</strong><span>useful categories</span></div>
+        <div class="stat"><strong>₱0</strong><span>to browse, always</span></div>
+      </section>
+
+      <section id="directory" class="directory-section">
+        <div class="directory-head">
+          <div><p class="eyebrow">Browse the collection</p><h2>The directory</h2></div>
+          <p>Start with the search above. Use these optional filters when you need to narrow the results.</p>
+        </div>
+        <details class="filter-panel">
+          <summary>More filters</summary>
+          <div class="filters" aria-label="Supplier filters">
+            <select class="field" id="region-filter" aria-label="Filter by region"><option value="">All locations</option><option value="Philippines">Philippines</option><option value="International">International</option></select>
+            <select class="field" id="category-filter" aria-label="Filter by category"><option value="">All categories</option></select>
+            <select class="field" id="level-filter" aria-label="Filter by experience level"><option value="">All baker levels</option><option value="Beginner">Beginner</option><option value="Growing bakery">Growing bakery</option><option value="Professional">Professional</option></select>
+          </div>
+        </details>
+        <div class="results-bar"><span id="results-count" aria-live="polite">Showing all suppliers</span><button class="clear-btn" id="clear-filters" type="button">Clear search and filters</button></div>
+        <div class="cards" id="supplier-grid"></div>
+        <div class="empty" id="empty-state"><strong>No suppliers match that search.</strong><br />Try a broader term or clear the filters.</div>
+      </section>
+
+      <section class="starter" id="starter-kit">
+        <div class="starter-head"><div><p class="eyebrow starter-eyebrow">New to bread?</p><h2>Your first sourdough kit need not be expensive.</h2></div><p>Start with the seven things that affect results. Upgrade to specialty equipment only after your process is consistent.</p></div>
+        <div class="starter-grid"><div class="starter-item"><span>01</span>Reliable bread flour</div><div class="starter-item"><span>02</span>Digital scale</div><div class="starter-item"><span>03</span>Bowl + bench scraper</div><div class="starter-item"><span>04</span>Covered baking vessel</div><div class="starter-item"><span>05</span>Banneton or lined bowl</div><div class="starter-item"><span>06</span>Razor or bread lame</div><div class="starter-item"><span>07</span>Instant-read thermometer</div></div>
+      </section>
+
+      <section class="principles" id="about">
+        <div><p class="eyebrow">How this works</p><h2>Useful beats exhaustive.</h2></div>
+        <div class="principle-list">
+          <div class="principle"><strong>No account required.</strong><p>The directory is open to everyone. The optional form below is only for people who want an occasional update.</p></div>
+          <div class="principle"><strong>Direct links, not lead capture.</strong><p>Every card sends you to the supplier's own website and a Google Maps search for its physical presence.</p></div>
+          <div class="principle"><strong>Philippines first, global when it matters.</strong><p>Local sources cover everyday needs. International suppliers are included for specialist tools, grains and production equipment.</p></div>
+          <div class="principle"><strong>Independent editorial curation.</strong><p>Listings are not endorsements or guarantees. Stock, prices, shipping and trade terms change—confirm them with the supplier before purchasing.</p></div>
+        </div>
+      </section>
+
+      <section class="signup-section" id="join">
+        <div class="signup-copy"><p class="eyebrow">Stay in the loop</p><h2>Know when the directory grows.</h2><p>Sign up for occasional updates when we add useful suppliers, new regions or practical resources for bakers.</p></div>
+        <div class="signup-card">
+          <form class="notify-form" id="notify-form">
+            <div class="form-row"><input class="notify-input" type="text" name="first_name" placeholder="First name" required autocomplete="given-name" /><input class="notify-input" type="email" name="email" placeholder="Email address" required autocomplete="email" /></div>
+            <div><p class="toggle-label">Signing up as:</p><div class="toggle-row"><button type="button" class="toggle-btn active" id="btn-individual" data-account-type="individual">Individual Baker</button><button type="button" class="toggle-btn" id="btn-company" data-account-type="company">Company / Business</button></div></div>
+            <input type="hidden" name="account_type" id="account_type" value="individual" />
+            <div class="conditional-fields" id="company-fields">
+              <div><p class="toggle-label">Would you like us to review your business for the directory?</p><div class="toggle-row"><button type="button" class="toggle-btn" id="btn-feature-yes" data-feature="yes">Yes, review us</button><button type="button" class="toggle-btn" id="btn-feature-no" data-feature="no">Not yet</button></div></div>
+              <input type="hidden" name="wants_featured" id="wants_featured" value="" />
+              <div id="business-fields" class="business-fields"><input class="notify-input" type="url" name="business_url" id="business_url" placeholder="https://yourbusiness.com" autocomplete="url" /><input class="notify-input" type="tel" name="business_number" placeholder="Business number (optional)" autocomplete="tel" /></div>
+            </div>
+            <button class="notify-btn" type="submit">Sign Up</button><p class="notify-note">No spam. Unsubscribe whenever you like.</p>
+          </form>
+          <div class="success-msg" id="success-msg" role="status"><strong>You're on the list.</strong><br />We will email only when there is something genuinely useful to share.</div>
+        </div>
+      </section>
     </div>
   </main>
 
-  <footer>
-    <p class="footer-tagline">∿ Find what your bake is made of. ∿</p>
-    <p class="footer-credit">
-      Built By A Baker ·
-      <a href="https://riseartisanal.com" target="_blank" rel="noopener">Rise Artisanal</a>
-    </p>
-  </footer>
-
-  <script>
-    function setType(type) {
-      document.getElementById('account_type').value = type;
-      document.getElementById('btn-individual').classList.toggle('active', type === 'individual');
-      document.getElementById('btn-company').classList.toggle('active', type === 'company');
-      const companyFields = document.getElementById('company-fields');
-      companyFields.classList.toggle('visible', type === 'company');
-      if (type === 'individual') {
-        document.getElementById('wants_featured').value = '';
-        document.getElementById('url-field').style.display = 'none';
-        document.getElementById('btn-feature-yes').classList.remove('active');
-        document.getElementById('btn-feature-no').classList.remove('active');
-      }
-    }
-
-    function setFeature(val) {
-      document.getElementById('wants_featured').value = val;
-      document.getElementById('btn-feature-yes').classList.toggle('active', val === 'yes');
-      document.getElementById('btn-feature-no').classList.toggle('active', val === 'no');
-      document.getElementById('url-field').style.display = val === 'yes' ? 'block' : 'none';
-    }
-
-    document.getElementById('notify-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-
-      // Prepend https:// to business URL if provided
-      const urlInput = document.getElementById('business_url');
-      if (urlInput && urlInput.value) {
-        data.set('business_url', 'https://' + urlInput.value.replace(/^https?:\/\//, ''));
-      }
-
-      try {
-        const res = await fetch('https://formspree.io/f/xpqnynqe', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          // GA4: record a sign-up conversion (no-op until you set your Measurement ID)
-          if (typeof gtag === 'function') {
-            gtag('event', 'sign_up', {
-              method: 'waitlist',
-              account_type: data.get('account_type') || 'individual'
-            });
-          }
-          form.style.display = 'none';
-          document.getElementById('success-msg').style.display = 'block';
-        } else {
-          alert('Something went wrong. Please try again or email us directly.');
-        }
-      } catch (err) {
-        alert('Something went wrong. Please try again.');
-      }
-    });
-  </script>
-
+  <footer><div class="shell footer-inner"><p>Last directory review: July 2026 · No paid placements in this edition.</p><p>Built by <a href="https://riseartisanal.com/" target="_blank" rel="noopener">Rise Artisanal</a> · <a href="https://thebakersconverter.com/" target="_blank" rel="noopener">Use The Baker's Converter</a></p></div></footer>
+  <script src="suppliers.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
