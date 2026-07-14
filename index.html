@@ -55,7 +55,7 @@
         <a href="#directory">Suppliers</a>
         <a href="#starter-kit">Starter kit</a>
         <a href="#about">How we curate</a>
-        <a href="#join">Sign up</a>
+        <a href="#join">Get featured</a>
         <a href="https://thebakersconverter.com/" target="_blank" rel="noopener">Baker's Converter ↗</a>
       </div>
     </div>
@@ -78,7 +78,7 @@
 
     <div class="shell">
       <section class="stats" aria-label="Directory statistics">
-        <div class="stat"><strong id="supplier-stat">34</strong><span>curated suppliers</span></div>
+        <div class="stat"><strong id="supplier-stat">34</strong><span>curated listings</span></div>
         <div class="stat"><strong id="ph-stat">18</strong><span>Philippine sources</span></div>
         <div class="stat"><strong id="category-stat">20+</strong><span>useful categories</span></div>
         <div class="stat"><strong>₱0</strong><span>to browse, always</span></div>
@@ -97,9 +97,9 @@
             <select class="field" id="level-filter" aria-label="Filter by experience level"><option value="">All baker levels</option><option value="Beginner">Beginner</option><option value="Growing bakery">Growing bakery</option><option value="Professional">Professional</option></select>
           </div>
         </details>
-        <div class="results-bar"><span id="results-count" aria-live="polite">Showing all suppliers</span><button class="clear-btn" id="clear-filters" type="button">Clear search and filters</button></div>
+        <div class="results-bar"><span id="results-count" aria-live="polite">Showing all listings</span><button class="clear-btn" id="clear-filters" type="button">Clear search and filters</button></div>
         <div class="cards" id="supplier-grid"></div>
-        <div class="empty" id="empty-state"><strong>No suppliers match that search.</strong><br />Try a broader term or clear the filters.</div>
+        <div class="empty" id="empty-state"><strong>No listings match that search.</strong><br />Try a broader term or clear the filters.</div>
       </section>
 
       <section class="starter" id="starter-kit">
@@ -110,28 +110,26 @@
       <section class="principles" id="about">
         <div><p class="eyebrow">How this works</p><h2>Useful beats exhaustive.</h2></div>
         <div class="principle-list">
-          <div class="principle"><strong>No account required.</strong><p>The directory is open to everyone. The optional form below is only for people who want an occasional update.</p></div>
-          <div class="principle"><strong>Direct links, not lead capture.</strong><p>Every card sends you to the supplier's own website and a Google Maps search for its physical presence.</p></div>
+          <div class="principle"><strong>No account required.</strong><p>The directory is open to everyone. Suppliers and bakeries may use the form below to request editorial review.</p></div>
+          <div class="principle"><strong>Direct links, not lead capture.</strong><p>Every card sends you to the business's own website or public page and a Google Maps search for its physical presence.</p></div>
           <div class="principle"><strong>Philippines first, global when it matters.</strong><p>Local sources cover everyday needs. International suppliers are included for specialist tools, grains and production equipment.</p></div>
-          <div class="principle"><strong>Independent editorial curation.</strong><p>Listings are not endorsements or guarantees. Stock, prices, shipping and trade terms change—confirm them with the supplier before purchasing.</p></div>
+          <div class="principle"><strong>Independent editorial curation.</strong><p>Submissions and existing listings are reviewed for usefulness. Inclusion is not automatic, and listings are not endorsements or guarantees.</p></div>
         </div>
       </section>
 
       <section class="signup-section" id="join">
-        <div class="signup-copy"><p class="eyebrow">Stay in the loop</p><h2>Know when the directory grows.</h2><p>Sign up for occasional updates when we add useful suppliers, new regions or practical resources for bakers.</p></div>
+        <div class="signup-copy"><p class="eyebrow">For suppliers and bakeries</p><h2>Get your business featured.</h2><p>Sell ingredients, tools, equipment or packaging—or bake for your community? Submit your business for editorial review and possible inclusion in the directory.</p></div>
         <div class="signup-card">
-          <form class="notify-form" id="notify-form">
-            <div class="form-row"><input class="notify-input" type="text" name="first_name" placeholder="First name" required autocomplete="given-name" /><input class="notify-input" type="email" name="email" placeholder="Email address" required autocomplete="email" /></div>
-            <div><p class="toggle-label">Signing up as:</p><div class="toggle-row"><button type="button" class="toggle-btn active" id="btn-individual" data-account-type="individual">Individual Baker</button><button type="button" class="toggle-btn" id="btn-company" data-account-type="company">Company / Business</button></div></div>
-            <input type="hidden" name="account_type" id="account_type" value="individual" />
-            <div class="conditional-fields" id="company-fields">
-              <div><p class="toggle-label">Would you like us to review your business for the directory?</p><div class="toggle-row"><button type="button" class="toggle-btn" id="btn-feature-yes" data-feature="yes">Yes, review us</button><button type="button" class="toggle-btn" id="btn-feature-no" data-feature="no">Not yet</button></div></div>
-              <input type="hidden" name="wants_featured" id="wants_featured" value="" />
-              <div id="business-fields" class="business-fields"><input class="notify-input" type="url" name="business_url" id="business_url" placeholder="https://yourbusiness.com" autocomplete="url" /><input class="notify-input" type="tel" name="business_number" placeholder="Business number (optional)" autocomplete="tel" /></div>
-            </div>
-            <button class="notify-btn" type="submit">Sign Up</button><p class="notify-note">No spam. Unsubscribe whenever you like.</p>
+          <form class="notify-form" id="supplier-form">
+            <input type="hidden" name="_subject" value="Supplier submission — The Baker's Directory" />
+            <div class="form-row"><input class="notify-input" type="text" name="contact_name" placeholder="Contact name" required autocomplete="name" /><input class="notify-input" type="email" name="email" placeholder="Business email" required autocomplete="email" /></div>
+            <div class="form-row"><input class="notify-input" type="text" name="business_name" placeholder="Business name" required autocomplete="organization" /><select class="notify-input" name="business_type" required><option value="" selected disabled>Business type</option><option value="Supplier">Supplier</option><option value="Bakery">Bakery</option><option value="Supplier and bakery">Supplier and bakery</option><option value="Other baking business">Other baking business</option></select></div>
+            <div class="form-row"><input class="notify-input" type="text" name="location" placeholder="City, province/state, country" required autocomplete="address-level2" /><input class="notify-input" type="url" name="business_url" placeholder="Website or public social page" required autocomplete="url" /></div>
+            <textarea class="notify-input notify-textarea" name="products_services" placeholder="What do you sell or make? Include the products, brands or services bakers can find through you." required></textarea>
+            <input class="notify-input" type="tel" name="business_number" placeholder="Business phone or WhatsApp (optional)" autocomplete="tel" />
+            <button class="notify-btn" type="submit">Submit for Review</button><p class="notify-note">Every submission is reviewed. Inclusion is not automatic, and there is no listing fee.</p>
           </form>
-          <div class="success-msg" id="success-msg" role="status"><strong>You're on the list.</strong><br />We will email only when there is something genuinely useful to share.</div>
+          <div class="success-msg" id="submission-success" role="status"><strong>Submission received.</strong><br />We will review your business and contact you if we need more information.</div>
         </div>
       </section>
     </div>
