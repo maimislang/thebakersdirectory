@@ -1,4 +1,82 @@
-const suppliers = Array.isArray(window.SUPPLIERS) ? window.SUPPLIERS : [];
+const supplierData = Array.isArray(window.SUPPLIERS) ? window.SUPPLIERS : [];
+
+// Keep city-level discovery useful even when a national retailer's original listing is broad.
+const allAboutBaking = supplierData.find(item => item.name === 'All About Baking');
+if (allAboutBaking) {
+  allAboutBaking.location = 'Quezon City branches and stores nationwide; online delivery across the Philippines';
+  allAboutBaking.mapsQuery = 'All About Baking Quezon City';
+}
+
+const localAdditions = [
+  {
+    name: 'Rise Artisanal',
+    region: 'Philippines',
+    location: 'Quezon City, Metro Manila',
+    categories: ['Bakery', 'Sourdough bread', 'Artisan bread', 'Workshops'],
+    levels: ['Beginner', 'Growing bakery'],
+    bestFor: 'Long-fermented sourdough, focaccia and hands-on learning',
+    description: 'A Quezon City microbakery producing naturally leavened bread, focaccia and seasonal baked goods, with practical sourdough workshops for home bakers.',
+    website: 'https://riseartisanal.com/',
+    mapsQuery: 'Rise Artisanal Quezon City',
+    access: 'Pre-order + workshops',
+    featured: true
+  },
+  {
+    name: 'Wonderbake',
+    region: 'Philippines',
+    location: 'Quezon City, Metro Manila',
+    categories: ['Ingredients', 'Tools & bakeware', 'Packaging', 'Cake decorating'],
+    levels: ['Beginner', 'Growing bakery'],
+    bestFor: 'Accessible baking ingredients, tools and decorating supplies in Quezon City',
+    description: 'A local baking-supply stop for ingredients, pans, decorating materials, packaging and everyday tools used by home and small-business bakers.',
+    website: 'https://www.google.com/search?q=Wonderbake+Quezon+City',
+    mapsQuery: 'Wonderbake Quezon City',
+    access: 'Store + online search'
+  },
+  {
+    name: "Gavino's Japanese Donuts",
+    region: 'Philippines',
+    location: 'Granada Street area, Quezon City, Metro Manila',
+    categories: ['Bakery', 'Donuts', 'Pastries'],
+    levels: ['Beginner', 'Growing bakery'],
+    bestFor: 'Japanese-style donuts and filled pastries',
+    description: 'A Quezon City bakery known for soft Japanese-style donuts and a broad selection of filled and glazed pastries.',
+    website: 'https://www.google.com/search?q=Gavino%27s+Japanese+Donuts+Quezon+City',
+    mapsQuery: "Gavino's Donuts Quezon City",
+    access: 'Store + delivery platforms'
+  },
+  {
+    name: 'Kamuning Bakery Cafe',
+    region: 'Philippines',
+    location: '43 Judge Jimenez Street corner K-1 Street, Kamuning, Quezon City',
+    categories: ['Bakery', 'Traditional bread', 'Pandesal', 'Cafe'],
+    levels: ['Beginner', 'Growing bakery', 'Professional'],
+    bestFor: 'Historic Filipino bread baked in a traditional pugon',
+    description: 'A historic Quezon City bakery best known for pandesal, pan de suelo and other breads made using its traditional wood-fired brick oven.',
+    website: 'https://www.google.com/search?q=Kamuning+Bakery+Cafe',
+    mapsQuery: 'Kamuning Bakery Cafe Quezon City',
+    access: 'Bakery + cafe'
+  },
+  {
+    name: 'Pan de Manila',
+    region: 'Philippines',
+    location: 'Quezon City-based bakery chain with branches across Metro Manila and the Philippines',
+    categories: ['Bakery', 'Pandesal', 'Traditional bread', 'Spreads'],
+    levels: ['Beginner', 'Growing bakery'],
+    bestFor: 'Everyday Filipino breads, pandesal and take-home spreads',
+    description: 'A Philippine bakery chain founded in Quezon City, known for freshly baked pandesal, specialty breads, spreads and merienda products.',
+    website: 'https://www.google.com/search?q=Pan+de+Manila+Quezon+City',
+    mapsQuery: 'Pan de Manila Quezon City',
+    access: 'Branches + delivery platforms'
+  }
+];
+
+const existingNames = new Set(supplierData.map(item => item.name.toLowerCase()));
+localAdditions.forEach(item => {
+  if (!existingNames.has(item.name.toLowerCase())) supplierData.unshift(item);
+});
+
+const suppliers = supplierData;
 const grid = document.getElementById('supplier-grid');
 const searchInput = document.getElementById('search');
 const searchForm = document.getElementById('main-search-form');
@@ -55,7 +133,7 @@ function cardTemplate(supplier) {
         ${searchableTags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
       </div>
       <div class="actions">
-        <a class="btn primary" href="${escapeHtml(supplier.website)}" target="_blank" rel="noopener noreferrer">Visit supplier ↗</a>
+        <a class="btn primary" href="${escapeHtml(supplier.website)}" target="_blank" rel="noopener noreferrer">Visit listing ↗</a>
         <a class="btn secondary" href="${mapsUrl(supplier.mapsQuery)}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
       </div>
     </article>
@@ -75,6 +153,7 @@ function applyFilters() {
       supplier.bestFor,
       supplier.description,
       supplier.access,
+      ...(supplier.searchTerms || []),
       ...supplier.categories,
       ...supplier.levels
     ].join(' ').toLowerCase();
@@ -87,8 +166,8 @@ function applyFilters() {
 
   grid.innerHTML = filtered.map(cardTemplate).join('');
   resultsCount.textContent = filtered.length === suppliers.length
-    ? `Showing all ${suppliers.length} suppliers`
-    : `${filtered.length} supplier${filtered.length === 1 ? '' : 's'} found`;
+    ? `Showing all ${suppliers.length} listings`
+    : `${filtered.length} listing${filtered.length === 1 ? '' : 's'} found`;
   emptyState.style.display = filtered.length ? 'none' : 'block';
 }
 
@@ -173,7 +252,7 @@ notifyForm.addEventListener('submit', async event => {
 const itemListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "The Baker's Directory supplier list",
+  name: "The Baker's Directory listings",
   numberOfItems: suppliers.length,
   itemListElement: suppliers.map((supplier, index) => ({
     '@type': 'ListItem',
