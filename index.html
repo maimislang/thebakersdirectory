@@ -10,19 +10,16 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://thebakersdirectory.com/" />
   <meta name="theme-color" content="#7a4810" />
-
   <meta property="og:title" content="The Baker's Directory — Find What Your Bake Is Made Of" />
-  <meta property="og:description" content="Trusted suppliers for beginners, home bakers, microbakeries and professional bakeries. Free. Curated. No account required." />
+  <meta property="og:description" content="Trusted suppliers for beginners, home bakers, microbakeries and professional bakeries. Free to browse. Curated by a working baker." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thebakersdirectory.com/" />
   <meta property="og:site_name" content="The Baker's Directory" />
   <meta property="og:locale" content="en_PH" />
-
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet" />
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,11 +31,7 @@
         "url": "https://thebakersdirectory.com/",
         "description": "An independent, curated directory of baking suppliers in the Philippines and abroad.",
         "areaServed": ["Philippines", "Worldwide"],
-        "parentOrganization": {
-          "@type": "Organization",
-          "name": "Rise Artisanal",
-          "url": "https://riseartisanal.com/"
-        }
+        "parentOrganization": {"@type": "Organization", "name": "Rise Artisanal", "url": "https://riseartisanal.com/"}
       },
       {
         "@type": "WebSite",
@@ -57,40 +50,33 @@
 <body>
   <nav class="site-nav">
     <div class="shell nav-inner">
-      <a class="brand" href="#top" aria-label="The Baker's Directory home">
-        <span class="brand-mark">∿</span>
-        <span>The Baker's Directory</span>
-      </a>
+      <a class="brand" href="#top" aria-label="The Baker's Directory home"><span class="brand-mark">∿</span><span>The Baker's Directory</span></a>
       <div class="nav-links">
-        <a href="#starter-kit">Starter kit</a>
         <a href="#directory">Suppliers</a>
+        <a href="#starter-kit">Starter kit</a>
         <a href="#about">How we curate</a>
+        <a href="#join">Sign up</a>
         <a href="https://thebakersconverter.com/" target="_blank" rel="noopener">Baker's Converter ↗</a>
       </div>
     </div>
   </nav>
 
   <main id="top">
-    <div class="shell">
-      <section class="hero">
-        <div>
-          <p class="eyebrow">Free · Curated · No account required</p>
-          <h1>Find what your <em>bake</em> is made of.</h1>
-          <p class="hero-copy">
-            Trusted places to buy flour, chocolate, sourdough tools, mixers, ovens,
-            packaging and professional bakery supplies—starting in the Philippines,
-            with specialist sources from around the world.
-          </p>
-        </div>
-        <aside class="hero-note">
-          <strong>Built by a working baker.</strong>
-          <p>
-            This is an editorial directory, not a marketplace. We make the supplier
-            landscape easier to navigate; you buy directly from the source.
-          </p>
-        </aside>
-      </section>
+    <section class="search-hero">
+      <div class="search-hero-inner">
+        <p class="eyebrow">Free · Curated · No account required</p>
+        <h1>The Baker's <em>Directory</em></h1>
+        <p class="search-intro">Find trusted flour, ingredients, tools, ovens, mixers, packaging and specialist bakery suppliers.</p>
+        <form class="main-search" id="main-search-form" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
+          <input id="search" type="search" placeholder="Search flour, banneton, oven, packaging…" aria-label="Search suppliers" autocomplete="off" />
+          <button type="submit" aria-label="Search directory">Search</button>
+        </form>
+        <p class="search-hint">Try “bread flour”, “Quezon City”, “commercial oven” or “banneton”.</p>
+      </div>
+    </section>
 
+    <div class="shell">
       <section class="stats" aria-label="Directory statistics">
         <div class="stat"><strong id="supplier-stat">34</strong><span>curated suppliers</span></div>
         <div class="stat"><strong id="ph-stat">18</strong><span>Philippine sources</span></div>
@@ -98,101 +84,60 @@
         <div class="stat"><strong>₱0</strong><span>to browse, always</span></div>
       </section>
 
-      <section class="starter" id="starter-kit">
-        <div class="starter-head">
-          <div>
-            <p class="eyebrow" style="color:#e8c99e;margin-bottom:10px;">New to bread?</p>
-            <h2>Your first sourdough kit need not be expensive.</h2>
+      <section id="directory" class="directory-section">
+        <div class="directory-head">
+          <div><p class="eyebrow">Browse the collection</p><h2>The directory</h2></div>
+          <p>Start with the search above. Use these optional filters when you need to narrow the results.</p>
+        </div>
+        <details class="filter-panel">
+          <summary>More filters</summary>
+          <div class="filters" aria-label="Supplier filters">
+            <select class="field" id="region-filter" aria-label="Filter by region"><option value="">All locations</option><option value="Philippines">Philippines</option><option value="International">International</option></select>
+            <select class="field" id="category-filter" aria-label="Filter by category"><option value="">All categories</option></select>
+            <select class="field" id="level-filter" aria-label="Filter by experience level"><option value="">All baker levels</option><option value="Beginner">Beginner</option><option value="Growing bakery">Growing bakery</option><option value="Professional">Professional</option></select>
           </div>
-          <p>
-            Start with the seven things that affect results. Upgrade to specialty
-            equipment only after your process is consistent.
-          </p>
-        </div>
-        <div class="starter-grid">
-          <div class="starter-item"><span>01</span>Reliable bread flour</div>
-          <div class="starter-item"><span>02</span>Digital scale</div>
-          <div class="starter-item"><span>03</span>Bowl + bench scraper</div>
-          <div class="starter-item"><span>04</span>Covered baking vessel</div>
-          <div class="starter-item"><span>05</span>Banneton or lined bowl</div>
-          <div class="starter-item"><span>06</span>Razor or bread lame</div>
-          <div class="starter-item"><span>07</span>Instant-read thermometer</div>
-        </div>
+        </details>
+        <div class="results-bar"><span id="results-count" aria-live="polite">Showing all suppliers</span><button class="clear-btn" id="clear-filters" type="button">Clear search and filters</button></div>
+        <div class="cards" id="supplier-grid"></div>
+        <div class="empty" id="empty-state"><strong>No suppliers match that search.</strong><br />Try a broader term or clear the filters.</div>
       </section>
 
-      <section id="directory">
-        <div class="directory-head">
-          <h2>The directory</h2>
-          <p>
-            Search by supplier, product or location. Use the filters to move from
-            beginner-friendly retail to professional production supply.
-          </p>
-        </div>
-
-        <div class="filters" aria-label="Supplier filters">
-          <input class="field" id="search" type="search" placeholder="Search flour, banneton, oven, packaging…" aria-label="Search suppliers" />
-          <select class="field" id="region-filter" aria-label="Filter by region">
-            <option value="">All locations</option>
-            <option value="Philippines">Philippines</option>
-            <option value="International">International</option>
-          </select>
-          <select class="field" id="category-filter" aria-label="Filter by category">
-            <option value="">All categories</option>
-          </select>
-          <select class="field" id="level-filter" aria-label="Filter by experience level">
-            <option value="">All baker levels</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Growing bakery">Growing bakery</option>
-            <option value="Professional">Professional</option>
-          </select>
-        </div>
-
-        <div class="results-bar">
-          <span id="results-count" aria-live="polite">Showing all suppliers</span>
-          <button class="clear-btn" id="clear-filters" type="button">Clear filters</button>
-        </div>
-
-        <div class="cards" id="supplier-grid"></div>
-        <div class="empty" id="empty-state">
-          <strong>No suppliers match those filters.</strong><br />
-          Try a broader term or clear one of the filters.
-        </div>
+      <section class="starter" id="starter-kit">
+        <div class="starter-head"><div><p class="eyebrow starter-eyebrow">New to bread?</p><h2>Your first sourdough kit need not be expensive.</h2></div><p>Start with the seven things that affect results. Upgrade to specialty equipment only after your process is consistent.</p></div>
+        <div class="starter-grid"><div class="starter-item"><span>01</span>Reliable bread flour</div><div class="starter-item"><span>02</span>Digital scale</div><div class="starter-item"><span>03</span>Bowl + bench scraper</div><div class="starter-item"><span>04</span>Covered baking vessel</div><div class="starter-item"><span>05</span>Banneton or lined bowl</div><div class="starter-item"><span>06</span>Razor or bread lame</div><div class="starter-item"><span>07</span>Instant-read thermometer</div></div>
       </section>
 
       <section class="principles" id="about">
-        <div>
-          <p class="eyebrow">How this works</p>
-          <h2>Useful beats exhaustive.</h2>
-        </div>
+        <div><p class="eyebrow">How this works</p><h2>Useful beats exhaustive.</h2></div>
         <div class="principle-list">
-          <div class="principle">
-            <strong>No sign-ups and no paywall.</strong>
-            <p>You should not have to surrender your email address to find a sack of flour or a dough scraper.</p>
-          </div>
-          <div class="principle">
-            <strong>Direct links, not lead capture.</strong>
-            <p>Every card sends you to the supplier's own website and a Google Maps search for its physical presence.</p>
-          </div>
-          <div class="principle">
-            <strong>Philippines first, global when it matters.</strong>
-            <p>Local sources cover everyday needs. International suppliers are included for specialist tools, grains and production equipment.</p>
-          </div>
-          <div class="principle">
-            <strong>Independent editorial curation.</strong>
-            <p>Listings are not endorsements or guarantees. Stock, prices, shipping and trade terms change—confirm them with the supplier before purchasing.</p>
-          </div>
+          <div class="principle"><strong>No account required.</strong><p>The directory is open to everyone. The optional form below is only for people who want an occasional update.</p></div>
+          <div class="principle"><strong>Direct links, not lead capture.</strong><p>Every card sends you to the supplier's own website and a Google Maps search for its physical presence.</p></div>
+          <div class="principle"><strong>Philippines first, global when it matters.</strong><p>Local sources cover everyday needs. International suppliers are included for specialist tools, grains and production equipment.</p></div>
+          <div class="principle"><strong>Independent editorial curation.</strong><p>Listings are not endorsements or guarantees. Stock, prices, shipping and trade terms change—confirm them with the supplier before purchasing.</p></div>
+        </div>
+      </section>
+
+      <section class="signup-section" id="join">
+        <div class="signup-copy"><p class="eyebrow">Stay in the loop</p><h2>Know when the directory grows.</h2><p>Sign up for occasional updates when we add useful suppliers, new regions or practical resources for bakers.</p></div>
+        <div class="signup-card">
+          <form class="notify-form" id="notify-form">
+            <div class="form-row"><input class="notify-input" type="text" name="first_name" placeholder="First name" required autocomplete="given-name" /><input class="notify-input" type="email" name="email" placeholder="Email address" required autocomplete="email" /></div>
+            <div><p class="toggle-label">Signing up as:</p><div class="toggle-row"><button type="button" class="toggle-btn active" id="btn-individual" data-account-type="individual">Individual Baker</button><button type="button" class="toggle-btn" id="btn-company" data-account-type="company">Company / Business</button></div></div>
+            <input type="hidden" name="account_type" id="account_type" value="individual" />
+            <div class="conditional-fields" id="company-fields">
+              <div><p class="toggle-label">Would you like us to review your business for the directory?</p><div class="toggle-row"><button type="button" class="toggle-btn" id="btn-feature-yes" data-feature="yes">Yes, review us</button><button type="button" class="toggle-btn" id="btn-feature-no" data-feature="no">Not yet</button></div></div>
+              <input type="hidden" name="wants_featured" id="wants_featured" value="" />
+              <div id="business-fields" class="business-fields"><input class="notify-input" type="url" name="business_url" id="business_url" placeholder="https://yourbusiness.com" autocomplete="url" /><input class="notify-input" type="tel" name="business_number" placeholder="Business number (optional)" autocomplete="tel" /></div>
+            </div>
+            <button class="notify-btn" type="submit">Sign Up</button><p class="notify-note">No spam. Unsubscribe whenever you like.</p>
+          </form>
+          <div class="success-msg" id="success-msg" role="status"><strong>You're on the list.</strong><br />We will email only when there is something genuinely useful to share.</div>
         </div>
       </section>
     </div>
   </main>
 
-  <footer>
-    <div class="shell footer-inner">
-      <p>Last directory review: July 2026 · No paid placements in this edition.</p>
-      <p>Built by <a href="https://riseartisanal.com/" target="_blank" rel="noopener">Rise Artisanal</a> · <a href="https://thebakersconverter.com/" target="_blank" rel="noopener">Use The Baker's Converter</a></p>
-    </div>
-  </footer>
-
+  <footer><div class="shell footer-inner"><p>Last directory review: July 2026 · No paid placements in this edition.</p><p>Built by <a href="https://riseartisanal.com/" target="_blank" rel="noopener">Rise Artisanal</a> · <a href="https://thebakersconverter.com/" target="_blank" rel="noopener">Use The Baker's Converter</a></p></div></footer>
   <script src="suppliers.js"></script>
   <script src="app.js"></script>
 </body>
